@@ -5,6 +5,7 @@ import Nav from "./components/Nav";
 import {BrowserRouter, Route} from "react-router-dom";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
+import MonumentForm from './components/MonumentForm';
 
 function App() {
     const [name, setName] = useState('');
@@ -35,6 +36,7 @@ function App() {
                     <Route path="/" exact component={() => <Home name={name}/>}/>
                     <Route path="/login" component={() => <Login setName={setName}/>}/>
                     <Route path="/register" component={Register}/>
+                    <Route path="/add_monument" component={() => <MonumentForm name={name}/>}/>
                 </main>
             </BrowserRouter>
         </div>

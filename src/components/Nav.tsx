@@ -7,7 +7,9 @@ const Nav = (props: { name: string, setName: (name: string) => void }) => {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             credentials: 'include',
-        });
+        }).catch(
+            error => console.log("failed to logout user:", error)
+        );
 
         props.setName('');
     }
